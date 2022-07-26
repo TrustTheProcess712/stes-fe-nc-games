@@ -1,13 +1,5 @@
-import Header from "./Components/Header";
-import NavBar from "./Components/NavBar";
-
 const Home = () => {
-  return (
-    <section>
-      <Header />
-      <NavBar />
-    </section>
-  );
+  return <h2 className="home">Welcome</h2>;
 };
 
 export default Home;
