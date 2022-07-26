@@ -9,3 +9,16 @@ export function getReviews() {
     return res.data.reviews;
   });
 }
+
+export function getCategories() {
+  return myApi.get("categories").then((res) => {
+    return res.data.categories;
+  });
+}
+
+export function getCategoryByName(slug) {
+  return myApi.get(`/categories`, { params: { slug } }).then(({ data }) => {
+    return data.categories;
+    // return data.reviews;
+  });
+}

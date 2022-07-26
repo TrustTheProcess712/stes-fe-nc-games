@@ -1,25 +1,18 @@
-const ReviewsCard = ({
-  review_id,
-  title,
-  designer,
-  owner,
-  imgUrl,
-  reviewBody,
-  category,
-  createdAt,
-  votes,
-  commentCount,
-}) => {
+const ReviewsCard = ({ review }) => {
   return (
     <article>
-      <h2>{title}</h2>
-      <h3>Category: {category}</h3>
-      <p>Designer: {designer}</p>
-      <img className="review_image" src={imgUrl} alt={title} />
-      <p>Owner: {owner}</p>
-      <p>{reviewBody}</p>
-      <p>Votes: {votes}</p>
-      <p>Num of Comments: {commentCount}</p>
+      <h3>{review.title}</h3>
+      <p>Category: {review.category}</p>
+      <p>Designer: {review.designer}</p>
+      <img
+        className="review_image"
+        src={review.review_img_url}
+        alt={review.title}
+      />
+      <p>Owner: {review.owner}</p>
+      <p>{review.review_body}</p>
+      <p>Votes: {review.votes}</p>
+      <p>Num of Comments: {review.comment_count}</p>
     </article>
   );
 };
