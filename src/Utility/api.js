@@ -9,3 +9,9 @@ export function getReviews() {
     return res.data.reviews;
   });
 }
+
+export function getReviewById() {
+  return myApi.get(`/reviews/${review_id}`).then(({ data }) => {
+    return data.review;
+  });
+}

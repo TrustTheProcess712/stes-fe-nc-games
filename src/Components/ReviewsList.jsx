@@ -9,7 +9,8 @@ const ReviewsList = () => {
     getReviews().then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
     });
-  });
+  }, []);
+  console.log(reviews, "<<<<<");
 
   return (
     <section>
