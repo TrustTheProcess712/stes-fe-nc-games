@@ -8,6 +8,7 @@ import Home from "./Components/Home";
 import ReviewsList from "./Components/ReviewsList";
 import Categories from "./Components/Categories";
 import SingleCategory from "./Components/SingleCategory";
+import SelectedReview from "./Components/SelectedReview";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             path="/categories/:category_name"
             element={<SingleCategory />}
           />
+          <Route path="/reviews/:review_id" element={<SelectedReview />} />
         </Routes>
       </div>
     </BrowserRouter>

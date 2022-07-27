@@ -26,4 +26,16 @@ body, html {
   
   
 }
+.selected_review_headers{
+  color: rgb(98, 144, 161);
+}
+
+.review_cards_headers {
+  color: rgb(98, 144, 161);
+  
+}
+
+.review_cards {
+  padding-bottom: 40px;
+}
 
