@@ -4,50 +4,25 @@ import ReviewsCard from "./ReviewsCard";
 
 const ReviewsList = () => {
   const [reviews, setReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getReviews().then((reviewsFromApi) => {
       setReviews(reviewsFromApi);
+      setIsLoading(false);
     });
   }, []);
-  console.log(reviews, "<<<<<");
 
+  if (isLoading) return <p>Loading</p>;
   return (
     <section>
       <header className="reviews_list">
-        <h1>Full List of Reviews</h1>
+        <h2>Full List of Reviews</h2>
       </header>
 
-      {reviews.map(
-        ({
-          review_id,
-          title,
-          designer,
-          owner,
-          review_img_url,
-          review_body,
-          category,
-          created_at,
-          votes,
-          comment_count,
-        }) => {
-          return (
-            <ReviewsCard
-              key={review_id}
-              review_id={review_id}
-              title={title}
-              designer={designer}
-              owner={owner}
-              imgUrl={review_img_url}
-              reviewBody={review_body}
-              category={category}
-              createdAt={created_at}
-              votes={votes}
-              commentCount={comment_count}
-            />
-          );
-        }
-      )}
+      {reviews.map((review) => {
+        return <ReviewsCard review={review} key={review.review_id} />;
+      })}
     </section>
   );
 };
