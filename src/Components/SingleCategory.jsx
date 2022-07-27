@@ -6,11 +6,11 @@ import ReviewsCard from "./ReviewsCard";
 const SingleCategory = () => {
   const { category_name } = useParams();
   const [categoryReviews, setCategoryReviews] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getReviews().then((reviews) => {
-      // this is temporary delete after API is completed
-      console.log(reviews);
+      // this is temporary delete after backend API is completed
       const filteredReviews = reviews.filter((reviews) => {
         if (reviews.category === category_name) {
           return true;
@@ -19,9 +19,11 @@ const SingleCategory = () => {
         }
       });
       setCategoryReviews(filteredReviews);
+      setIsLoading(false);
     });
   }, [category_name]);
 
+  if (isLoading) return <p>Loading</p>;
   return (
     <section>
       <h2>Welcome to the {category_name} section!</h2>
