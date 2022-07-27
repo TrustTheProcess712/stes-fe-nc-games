@@ -9,8 +9,8 @@ const ReviewsCard = ({ review }) => {
         src={review.review_img_url}
         alt={review.title}
       />
-      <p>Owner: {review.owner}</p>
-      <p>{review.review_body}</p>
+      {/* <p>Owner: {review.owner}</p>
+      <p>{review.review_body}</p> */}
       <p>Votes: {review.votes}</p>
       <p>Num of Comments: {review.comment_count}</p>
     </article>
