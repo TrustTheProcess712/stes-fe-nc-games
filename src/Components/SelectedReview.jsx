@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../Utility/api";
-import ReviewsCard from "./ReviewsCard";
+import UpdateVotes from "./UpdateVotes";
 
 const SelectedReview = () => {
   const { review_id } = useParams();
@@ -16,6 +16,7 @@ const SelectedReview = () => {
   }, [review_id]);
 
   if (isLoading) return <p>Loading</p>;
+
   return (
     <section>
       <h2>Selected Review</h2>
@@ -24,7 +25,6 @@ const SelectedReview = () => {
           <h3>{singleReview.title}</h3>
           <h4>Category: {singleReview.category}</h4>
         </div>
-
         <p>Designer: {singleReview.designer}</p>
         <img
           className="review_image"
@@ -33,8 +33,9 @@ const SelectedReview = () => {
         />
         <p>Owner: {singleReview.owner}</p>
         <p>Review: {singleReview.review_body} </p>
-        <p>Votes: {singleReview.votes}</p>
-        <p>Num of Comments: {singleReview.comment_count}</p>
+        {/* <p>Votes: {singleReview.votes}</p> */}
+        <p>Number of Comments: {singleReview.comment_count}</p>
+        <UpdateVotes votes={singleReview.votes} />
       </article>
     </section>
   );
