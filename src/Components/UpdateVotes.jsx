@@ -19,8 +19,6 @@ const UpdateVotes = ({ votes }) => {
     });
   };
 
-  if (err) return <p>{err}</p>;
-
   const handleDownVote = () => {
     setCurrentVotes((currVotes) => currVotes - 1);
     setErr(null);
@@ -29,7 +27,6 @@ const UpdateVotes = ({ votes }) => {
       setCurrentVotes((currVotes) => currVotes + 1);
       setErr("Something went wrong, please try again.");
     });
-    if (err) return <p>{err}</p>;
   };
 
   const handleUpVoteDisable = () => {
