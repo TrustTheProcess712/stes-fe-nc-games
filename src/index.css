@@ -44,9 +44,22 @@ body, html {
   padding-bottom: 40px;
 }
 
+/* Comment Tab */
+
+.comment_tab{
+  border: solid grey 2px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+
 /* Categories Links and Header */
 
 
 
 /* UpdateVotes */
+
+
 

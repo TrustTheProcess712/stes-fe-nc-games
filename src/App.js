@@ -9,6 +9,7 @@ import ReviewsList from "./Components/ReviewsList";
 import Categories from "./Components/Categories";
 import SingleCategory from "./Components/SingleCategory";
 import SelectedReview from "./Components/SelectedReview";
+import Comments from "./Components/Comments";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             element={<SingleCategory />}
           />
           <Route path="/reviews/:review_id" element={<SelectedReview />} />
+          <Route path="/reviews/:review_id/comments" element={<Comments />} />
         </Routes>
       </div>
     </BrowserRouter>

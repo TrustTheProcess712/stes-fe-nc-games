@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../Utility/api";
+import Comments from "./Comments";
+
 import UpdateVotes from "./UpdateVotes";
 
 const SelectedReview = () => {
@@ -33,9 +35,9 @@ const SelectedReview = () => {
         />
         <p>Owner: {singleReview.owner}</p>
         <p>Review: {singleReview.review_body} </p>
-        {/* <p>Votes: {singleReview.votes}</p> */}
-        <p>Number of Comments: {singleReview.comment_count}</p>
         <UpdateVotes votes={singleReview.votes} />
+        <p>Number of Comments: {singleReview.comment_count}</p>
+        <Comments />
       </article>
     </section>
   );
