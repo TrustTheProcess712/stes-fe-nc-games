@@ -9,9 +9,8 @@ body, html {
   font-family: 'Quicksand';
 }
 
-.review_image {
-  height: 200px;
-}
+
+/* NavBar */
 
 .navbar{
   font-family: 'Quicksand';
@@ -24,10 +23,16 @@ body, html {
   flex-direction: row;
   justify-content: space-around;
   
-  
+  /* Single Reviews */
 }
 .selected_review_headers{
   color: rgb(98, 144, 161);
+}
+
+/* Review List Cards */
+
+.review_image {
+  height: 200px;
 }
 
 .review_cards_headers {
@@ -38,4 +43,10 @@ body, html {
 .review_cards {
   padding-bottom: 40px;
 }
+
+/* Categories Links and Header */
+
+
+
+/* UpdateVotes */
 

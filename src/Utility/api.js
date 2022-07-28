@@ -28,3 +28,11 @@ export function getCategoryByName(slug) {
     // return data.reviews;
   });
 }
+
+export function patchReviewVotes(review_id, inc_votes) {
+  return myApi
+    .patch(`/reviews/${review_id}`, { inc_votes })
+    .then(({ data }) => {
+      return data.review;
+    });
+}
