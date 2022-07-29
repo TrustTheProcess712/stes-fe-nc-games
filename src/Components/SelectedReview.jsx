@@ -5,7 +5,7 @@ import Comments from "./Comments";
 
 import UpdateVotes from "./UpdateVotes";
 
-const SelectedReview = () => {
+const SelectedReview = ({ author }) => {
   const { review_id } = useParams();
   const [singleReview, setSingleReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,8 +34,10 @@ const SelectedReview = () => {
           alt={singleReview.title}
         />
         <h3 className="review">Review</h3>
-        <p>Owner: {singleReview.owner}</p>
-        <p className="review_body"> {singleReview.review_body} </p>
+        <div className="review_body">
+          <h5>Review Author: {singleReview.owner}</h5>
+          <p> {singleReview.review_body} </p>
+        </div>
         <UpdateVotes votes={singleReview.votes} />
         <Comments numOfComments={singleReview.comment_count} />
       </article>
