@@ -22,22 +22,22 @@ const SelectedReview = () => {
   return (
     <section>
       <h2>Selected Review</h2>
-      <article>
+      <article className="selected_review">
         <div className="selected_review_headers">
           <h3>{singleReview.title}</h3>
-          <h4>Category: {singleReview.category}</h4>
         </div>
+        <p>Category: {singleReview.category}</p>
         <p>Designer: {singleReview.designer}</p>
         <img
           className="review_image"
           src={singleReview.review_img_url}
           alt={singleReview.title}
         />
+        <h3 className="review">Review</h3>
         <p>Owner: {singleReview.owner}</p>
-        <p>Review: {singleReview.review_body} </p>
+        <p className="review_body"> {singleReview.review_body} </p>
         <UpdateVotes votes={singleReview.votes} />
-        <p>Number of Comments: {singleReview.comment_count}</p>
-        <Comments />
+        <Comments numOfComments={singleReview.comment_count} />
       </article>
     </section>
   );

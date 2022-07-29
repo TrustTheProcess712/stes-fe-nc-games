@@ -2,18 +2,28 @@
 
 .App {
   text-align: center;
+  background-color:rgba(255, 255, 128, .5);
+
  
 }
-
-body, html {
+body, html{
   font-family: 'Quicksand';
+  
 }
+
+ /* Header */
+
+ .title, h2, .review, .comments_title{
+  color: #0c0c0c;
+  text-shadow: shadow1;
+  text-shadow: 2px 1px 0px rgba(252, 12, 12, 0.685)
+ }
 
 
 /* NavBar */
 
 .navbar{
-  font-family: 'Quicksand';
+  font-family: monospace;
   color:rgb(12, 12, 12);
   font-size: large;
   display: inline;
@@ -23,40 +33,75 @@ body, html {
   flex-direction: row;
   justify-content: space-around;
   
-  /* Single Reviews */
+  /* Selected Reviews */
 }
 .selected_review_headers{
-  color: rgb(98, 144, 161);
+  color: rgb(7, 7, 7);
+}
+.review{
+  font-family: 'Quicksand';
+  padding-top: 10px;
+}
+.selected_review{
+  font-family: monospace;
 }
 
-/* Review List Cards */
+.review_body{
+  font-family: monospace;
+  color:#0a0a0a;
+  
+  
+
+}
+
+/* Review List  */
 
 .review_image {
   height: 200px;
+  border-style: ridge;
+  border-radius: 5px;
+  border-color: rgba(32, 32, 32, 0.685);
+  border-spacing: 10%;
+  
+  
 }
 
 .review_cards_headers {
-  color: rgb(98, 144, 161);
+  color: rgb(13, 13, 14);
   
 }
 
 .review_cards {
   padding-bottom: 40px;
+  font-family: monospace;
+
+  
 }
 
 /* Comment Tab */
 
-.comment_tab{
-  border: solid grey 2px;
+.comment_tab, .review_body{
+  border: solid  rgba(31, 30, 30, 0.685);
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   margin-right: 12px;
   margin-bottom: 12px;
+  max-width:500px;
+  display:inline-flex
+  
+  
 }
+/* Comments Component */
 
-
+.comments_title{
+  font-family: 'Quicksand';
+  padding-top: 20px;
+}
 /* Categories Links and Header */
-
+.slug{
+  font-family: monospace;
+  color:black
+}
 
 
 /* UpdateVotes */
