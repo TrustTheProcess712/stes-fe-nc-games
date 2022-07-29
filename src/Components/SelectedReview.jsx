@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../Utility/api";
+import Comments from "./Comments";
+
 import UpdateVotes from "./UpdateVotes";
 
-const SelectedReview = () => {
+const SelectedReview = ({ author }) => {
   const { review_id } = useParams();
   const [singleReview, setSingleReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -20,22 +22,24 @@ const SelectedReview = () => {
   return (
     <section>
       <h2>Selected Review</h2>
-      <article>
+      <article className="selected_review">
         <div className="selected_review_headers">
           <h3>{singleReview.title}</h3>
-          <h4>Category: {singleReview.category}</h4>
         </div>
+        <p>Category: {singleReview.category}</p>
         <p>Designer: {singleReview.designer}</p>
         <img
           className="review_image"
           src={singleReview.review_img_url}
           alt={singleReview.title}
         />
-        <p>Owner: {singleReview.owner}</p>
-        <p>Review: {singleReview.review_body} </p>
-        {/* <p>Votes: {singleReview.votes}</p> */}
-        <p>Number of Comments: {singleReview.comment_count}</p>
+        <h3 className="review">Review</h3>
+        <div className="review_body">
+          <h5>Review Author: {singleReview.owner}</h5>
+          <p> {singleReview.review_body} </p>
+        </div>
         <UpdateVotes votes={singleReview.votes} />
+        <Comments numOfComments={singleReview.comment_count} />
       </article>
     </section>
   );

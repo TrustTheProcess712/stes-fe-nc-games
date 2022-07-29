@@ -36,3 +36,9 @@ export function patchReviewVotes(review_id, inc_votes) {
       return data.review;
     });
 }
+
+export function getComments(review_id) {
+  return myApi.get(`/reviews/${review_id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+}

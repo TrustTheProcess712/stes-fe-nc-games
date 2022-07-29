@@ -16,12 +16,18 @@ const ReviewsList = () => {
   if (isLoading) return <p>Loading</p>;
   return (
     <section>
-      <header className="reviews_list">
+      <header>
         <h2>Full List of Reviews</h2>
       </header>
 
       {reviews.map((review) => {
-        return <ReviewsCard review={review} key={review.review_id} />;
+        return (
+          <ReviewsCard
+            className="review_list"
+            review={review}
+            key={review.review_id}
+          />
+        );
       })}
     </section>
   );

@@ -5,8 +5,8 @@ const ReviewsCard = ({ review }) => {
     <article className="review_cards">
       <div className="review_cards_headers">
         <h3>{review.title}</h3>
-        <h4>Category: {review.category}</h4>
       </div>
+      <p>Category: {review.category}</p>
       <p>Designer: {review.designer}</p>
       <img
         className="review_image"
