@@ -49,10 +49,11 @@ body, html{
 .review_body{
   font-family: monospace;
   color:#0a0a0a;
-  
-  
-
+  max-width: 700px;
+  display:inline-block;
+  margin-top: -2%;
 }
+  
 
 /* Review List  */
 
@@ -87,7 +88,7 @@ body, html{
   margin-right: 12px;
   margin-bottom: 12px;
   max-width:600px;
-  display:inline-block
+  display:inline-block;
 }
 
 .author{
