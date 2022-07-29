@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../Utility/api";
 import CommentTab from "./CommentTab";
+import AddComment from "./AddComment";
 
 const Comments = ({ numOfComments }) => {
   const { review_id } = useParams();
@@ -25,6 +26,7 @@ const Comments = ({ numOfComments }) => {
       ) : (
         <CommentTab text="There are no comments for this review yet, sorry!" />
       )}
+      <AddComment setComments={setComments} />
     </section>
   );
 };

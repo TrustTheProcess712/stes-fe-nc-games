@@ -13,7 +13,7 @@ body, html{
 
  /* Header */
 
- .title, h2, .review, .comments_title{
+ .title, h2, .review, .comments_title, .post_comment{
   color: #0c0c0c;
   text-shadow: shadow1;
   text-shadow: 2px 1px 0px rgba(252, 12, 12, 0.685)
@@ -80,7 +80,7 @@ body, html{
 
 /* Comment Tab */
 
-.comment_tab, .review_bod{
+.comment_tab{
   border: solid  rgba(31, 30, 30, 0.685);
   border-radius: 5px;
   padding: 5px;

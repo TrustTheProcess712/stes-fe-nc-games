@@ -42,3 +42,7 @@ export function getComments(review_id) {
     return data.comments;
   });
 }
+
+export function postComment(review_id, comment) {
+  return myApi.post(`/reviews/${review_id}/comments`, comment);
+}
