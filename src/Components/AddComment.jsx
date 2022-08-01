@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { postComment } from "../Utility/api";
-import { getComments } from "../Utility/api";
 
 const AddComment = ({ setComments }) => {
   const { review_id } = useParams();
