@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewById } from "../Utility/api";
 import Comments from "./Comments";
-
 import UpdateVotes from "./UpdateVotes";
 
 const SelectedReview = ({ author }) => {

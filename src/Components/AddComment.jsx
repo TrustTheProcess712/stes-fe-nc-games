@@ -12,7 +12,6 @@ const AddComment = ({ setComments }) => {
     e.preventDefault();
     postComment(review_id, { body: commentToAdd, username: "cooljmessy" })
       .then((res) => {
-        console.log(res, "<<<<<<<");
         setCommentToAdd("");
         setIsLoading(false);
         setComments((currentComment) => [...currentComment, res.data.comment]);

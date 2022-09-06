@@ -17,7 +17,7 @@ export function getReviewById(review_id) {
 }
 
 export function getCategories() {
-  return myApi.get("categories").then(({ data }) => {
+  return myApi.get("/categories").then(({ data }) => {
     return data.categories;
   });
 }
@@ -25,7 +25,6 @@ export function getCategories() {
 export function getCategoryByName(slug) {
   return myApi.get(`/categories`, { params: { slug } }).then(({ data }) => {
     return data.categories;
-    // return data.reviews;
   });
 }
 
