@@ -13,15 +13,20 @@ const Comments = ({ numOfComments }) => {
       setComments(commentsFromApi);
     });
   }, [review_id]);
-  console.log(comments);
-
   return (
     <section className="review_comments">
       <h3 className="comments_title">Review Comments</h3>
       <p>Number Of Comments: {numOfComments}</p>
       {comments.length > 0 ? (
         comments.map((comment) => {
-          return <CommentTab author={comment.author} text={comment.body} />;
+          return (
+            <CommentTab
+              comment={comment}
+              author={comment.author}
+              text={comment.body}
+              key={comment.comment_id}
+            />
+          );
         })
       ) : (
         <CommentTab text="There are no comments for this review yet, sorry!" />

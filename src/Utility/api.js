@@ -4,8 +4,9 @@ const myApi = axios.create({
   baseURL: "https://stes-game.herokuapp.com/api/",
 });
 
-export function getReviews() {
-  return myApi.get("/reviews").then(({ data }) => {
+export function getReviews(sortBy) {
+  console.log(sortBy);
+  return myApi.get(`/reviews?sort_by=${sortBy}`).then(({ data }) => {
     return data.reviews;
   });
 }

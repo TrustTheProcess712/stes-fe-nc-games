@@ -5,7 +5,7 @@ import { postComment } from "../Utility/api";
 const AddComment = ({ setComments }) => {
   const { review_id } = useParams();
   const [commentToAdd, setCommentToAdd] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   function handleSubmit(e) {
@@ -13,7 +13,7 @@ const AddComment = ({ setComments }) => {
     postComment(review_id, { body: commentToAdd, username: "cooljmessy" })
       .then((res) => {
         setCommentToAdd("");
-        setIsLoading(false);
+        setIsLoading(true);
         setComments((currentComment) => [...currentComment, res.data.comment]);
       })
       .catch((err) => {
@@ -38,7 +38,6 @@ const AddComment = ({ setComments }) => {
           ) : null}
         </div>
         <button type="submit">Submit</button>
-        {/* Add function that stop submition of an empty comment */}
         <button
           onClick={() => {
             setCommentToAdd("");
