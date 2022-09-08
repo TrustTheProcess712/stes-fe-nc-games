@@ -7,6 +7,7 @@ const Categories = () => {
 
   useEffect(() => {
     getCategories().then((categoriesFromApi) => {
+      console.log(categoriesFromApi, "<<<<<<<");
       setCategories(categoriesFromApi);
     });
   }, []);

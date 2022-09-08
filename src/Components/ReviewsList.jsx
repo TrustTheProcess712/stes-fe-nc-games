@@ -11,7 +11,6 @@ const ReviewsList = () => {
 
   useEffect(() => {
     getReviews(sortBy).then((reviewsFromApi) => {
-      // console.log(reviewsFromApi, "<<<<<<<<<<");
       setReviews(reviewsFromApi);
       setIsLoading(false);
     });

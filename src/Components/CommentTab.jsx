@@ -19,7 +19,6 @@ const CommentTab = ({ text, author, comment }) => {
       });
   };
 
-  console.log(comment);
   return (
     <section className="comment_tab">
       <header>

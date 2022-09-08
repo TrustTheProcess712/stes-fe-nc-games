@@ -38,7 +38,7 @@ const SelectedReview = ({ author }) => {
           <p> {singleReview.review_body} </p>
         </div>
         <UpdateVotes votes={singleReview.votes} />
-        <Comments numOfComments={singleReview.comment_count} />
+        <Comments author={author} numOfComments={singleReview.comment_count} />
       </article>
     </section>
   );

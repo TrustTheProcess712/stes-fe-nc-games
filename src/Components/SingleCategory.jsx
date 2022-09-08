@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getReviews } from "../Utility/api";
 import ReviewsCard from "./ReviewsCard";
-import FilterReviews from "./FilterReviews";
+import axios from "axios";
 
 const SingleCategory = () => {
   const { category_name } = useParams();
@@ -10,8 +9,8 @@ const SingleCategory = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getReviews().then((reviews) => {
-      const filteredReviews = reviews.filter((reviews) => {
+    axios.get(`https://stes-game.herokuapp.com/api/reviews`).then((res) => {
+      const filteredReviews = res.data.reviews.filter((reviews) => {
         if (reviews.category === category_name) {
           return true;
         } else {
@@ -27,7 +26,7 @@ const SingleCategory = () => {
   return (
     <section>
       <h2>Welcome to the {category_name} section!</h2>
-      <FilterReviews />
+
       {categoryReviews.map((review) => {
         return <ReviewsCard review={review} key={review.review_id} />;
       })}

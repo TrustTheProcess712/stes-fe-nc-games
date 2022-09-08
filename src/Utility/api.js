@@ -5,7 +5,6 @@ const myApi = axios.create({
 });
 
 export function getReviews(sortBy) {
-  console.log(sortBy);
   return myApi.get(`/reviews?sort_by=${sortBy}`).then(({ data }) => {
     return data.reviews;
   });
@@ -25,6 +24,7 @@ export function getCategories() {
 
 export function getCategoryByName(slug) {
   return myApi.get(`/categories`, { params: { slug } }).then(({ data }) => {
+    console.log(data, "<<<<<");
     return data.categories;
   });
 }
