@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const myApi = axios.create({
-  baseURL: "https://stes-game.herokuapp.com/api/",
+  baseURL: "https://stes-nc-games.onrender.com/api",
 });
 
 export function getReviews(sortBy) {
